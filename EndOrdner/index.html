@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Fonts links -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Coiny&family=Sono:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Title of the webpage -->
+    <title>Finde Neue Projekt Ideen</title>
+  </head>
+  <body>
+    <!-- Main container -->
+    <div class="container">
+      <!-- Header -->
+      <header class="container-header">
+        <!-- Logo and title -->
+        <div>
+          <span class="logo-ctn">
+            <img class="logo" src="icons/light-bulb.png" alt="logo" />
+          </span>
+          <h1 class="title">Finde Neue Ideen</h1>
+        </div>
+        <!-- Button for posting -->
+        <div>
+          <div class="ideas--count-ctn">
+            <span class="ideas-count"></span>
+            <img class="dots-icon" src="icons/dots.png" alt="dots" />
+          </div>
+          <button class="post-button">posten <span>📝</span></button>
+        </div>
+      </header>
+
+      <!-- Filter buttons -->
+      <nav class="filter-buttons">
+        <!-- Buttons for filtering ideas -->
+        <button class="button--filter-all">Alle <span> 🌐</span></button>
+        <button class="button--filter-beginner">Anfänger <span>👶</span></button>
+        <button class="button--filter-intermediate">Mittelstufe <span>🧑</span></button>
+        <button class="button--filter-expert">Experte <span>👨</span></button>
+      </nav>
+
+      <main>
+        <!-- Ideas list -->
+        <ul class="ideas-list">
+          <article class="idea beginner-border" data-id="1">
+            <h2 class="idea-title">HTML App</h2>
+            <p class="idea-description">a very short description</p>
+            <div class="idea-ratings">
+              <div class="idea-rating" data-type="likes">
+                <span>👍</span>
+                <p>11</p>
+              </div>
+              <div class="idea-rating" data-type="fires">
+                <span>🔥</span>
+                <p>34</p>
+              </div>
+              <div class="idea-rating">
+                <span>👎</span>
+                <p>3</p>
+              </div>
+            </div>
+          </article>
+        </ul>
+        <!-- Später -->
+        <div class="loading-popup">
+          <img class="loading-icon" src="icons/loading.png" alt="loading icon" />
+        </div>
+        <span class="no-idea-message">Sei der erste, der eine Idee postet! 🚀💡 </span>
+      </main>
+
+      <!-- POST POPUP -->
+      <div class="post-popup">
+        <form class="post-form">
+          <!-- HEADER -->
+          <header class="post--form-header">
+            <span class="icon--close-ctn"><img class="icon-close" src="icons/close.png" alt="close icon" /></span>
+            <button class="publish-button">veröffentlichen 🎉</button>
+          </header>
+          <div class="post--form-fields">
+            <input class="title-input post--form-field" type="text" placeholder="Titel" required />
+            <input class="description-input post--form-field" type="text" placeholder="Beschreibung" required />
+            <!-- OPTIONS -->
+            <select required class="post--form-field post--form-select">
+              <option>Level ⭐</option>
+              <option value="beginner">Anfänger 👶</option>
+              <option value="intermediate">Mittelstufe 🧑</option>
+              <option value="expert">Experte 👨</option>
+            </select>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Link to Supabase and js -->
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="./js/supabase/checkRating.js"></script>
+    <script src="./js/supabase/rating.js"></script>
+    <script src="./js/supabase/main.js"></script>
+    <script src="js/elements.js"></script>
+    <script src="./js/supabase/createHtml.js"></script>
+    <script src="./js/supabase/getIdeas.js"></script>
+    <script src="./js/supabase/postIdea.js"></script>
+    <script src="./js/supabase/filter.js"></script>
+    <script src="./js/supabase/resetPostForm.js"></script>
+    <script src="./js/popup.js"></script>
+  </body>
+</html>

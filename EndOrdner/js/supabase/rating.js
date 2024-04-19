@@ -1,12 +1,7 @@
-const ratedIdeas = JSON.parse(localStorage.getItem("ratedIdeas")) || { likes: [], fires: [], dislikes: [] };
-
 // Aktualisiert die Bewertung einer Idee und speichert sie in der Datenbank
 const rateIdeas = async (ideaElement, ratingType, ratingDisplayElement) => {
   // Idee-ID abrufen
   const ideaId = ideaElement.dataset.id;
-
-  // Überprüft, ob der Benutzer bereits die Idee bewertet hat
-  if (checkIfAlreadyRated(ratingType, ideaId)) return alert("😎 Diese Idee hast du bereits bewertet 📣");
 
   // Neue Bewertungszahl berechnen
   const newRating = +ratingDisplayElement.innerHTML + 1;
